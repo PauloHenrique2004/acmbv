@@ -573,8 +573,17 @@
             font-size: 2rem;
         }
 
+        .sobre-pagina-shell {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
         .sobre-pagina-galeria {
+            width: 100%;
+            max-width: 100%;
             min-height: auto;
+            padding-left: 0;
+            padding-right: 0;
             padding-bottom: 20px;
         }
 
@@ -582,6 +591,8 @@
         #sobreNosCarousel .carousel-inner,
         #sobreNosCarousel .carousel-item,
         .sobre-pagina-carousel-inner {
+            width: 100%;
+            max-width: 100%;
             height: auto;
         }
 
