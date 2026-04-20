@@ -44,7 +44,7 @@
 <section class="sobre-pagina-apresentacao py-5">
     <div class="container py-lg-4">
         <div class="sobre-pagina-shell">
-            <div class="row align-items-stretch">
+            <div class="row align-items-stretch align-items-lg-start">
                 <div class="col-lg-6 mb-5 mb-lg-0 d-flex">
                     <div class="sobre-pagina-galeria">
                         <div class="sobre-pagina-ornamento"></div>
@@ -254,6 +254,18 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+    }
+
+    @media (min-width: 992px) {
+        .sobre-pagina-galeria {
+            min-height: auto;
+        }
+
+        .sobre-pagina-imagem-wrap {
+            height: 500px;
+            min-height: 500px;
+            max-height: 500px;
+        }
     }
 
     .sobre-pagina-indicadores {
@@ -548,9 +560,11 @@
         line-height: 1.6;
     }
 
-    @media (max-width: 1199.98px) {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
         .sobre-pagina-imagem-wrap {
             height: 450px;
+            min-height: 450px;
+            max-height: 450px;
         }
 
         .sobre-pagina-titulo {
