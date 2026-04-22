@@ -44,8 +44,8 @@
 <section class="sobre-pagina-apresentacao py-5">
     <div class="container py-lg-4">
         <div class="sobre-pagina-shell">
-            <div class="row align-items-stretch align-items-lg-start">
-                <div class="col-lg-6 mb-5 mb-lg-0 d-flex">
+            <div class="sobre-pagina-apresentacao-conteudo">
+                <div class="sobre-pagina-galeria-coluna">
                     <div class="sobre-pagina-galeria">
                         <div class="sobre-pagina-ornamento"></div>
 
@@ -85,12 +85,10 @@
                                 </a>
                             @endif
                         </div>
-
-
                     </div>
                 </div>
 
-                <div class="col-lg-6 pl-lg-5">
+                <div class="sobre-pagina-conteudo-coluna">
                     <span class="sobre-pagina-kicker">SOBRE NÓS</span>
                     <h2 class="sobre-pagina-titulo">{{ $titulo }}</h2>
                     <div class="sobre-pagina-texto">
@@ -193,10 +191,17 @@
         box-shadow: 0 24px 58px rgba(70, 83, 29, 0.13);
     }
 
+    .sobre-pagina-apresentacao-conteudo {
+        display: block;
+    }
+
+    .sobre-pagina-galeria-coluna {
+        margin-bottom: 32px;
+    }
+
     .sobre-pagina-galeria {
         position: relative;
         width: 100%;
-        min-height: 100%;
         padding: 20px;
         border-radius: 28px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(243, 246, 234, 0.94) 100%);
@@ -257,14 +262,25 @@
     }
 
     @media (min-width: 992px) {
-        .sobre-pagina-galeria {
-            min-height: auto;
+        .sobre-pagina-apresentacao-conteudo {
+            display: flow-root;
+        }
+
+        .sobre-pagina-galeria-coluna {
+            float: left;
+            width: min(44%, 520px);
+            margin-right: 56px;
+            margin-bottom: 24px;
+        }
+
+        .sobre-pagina-conteudo-coluna {
+            display: block;
         }
 
         .sobre-pagina-imagem-wrap {
-            height: 500px;
-            min-height: 500px;
-            max-height: 500px;
+            height: clamp(400px, 34vw, 520px);
+            min-height: 400px;
+            max-height: 520px;
         }
     }
 
@@ -561,6 +577,11 @@
     }
 
     @media (min-width: 992px) and (max-width: 1199.98px) {
+        .sobre-pagina-galeria-coluna {
+            width: min(42%, 460px);
+            margin-right: 40px;
+        }
+
         .sobre-pagina-imagem-wrap {
             height: 450px;
             min-height: 450px;
@@ -575,6 +596,10 @@
     @media (max-width: 991.98px) {
         .sobre-pagina-shell {
             padding: 30px 22px;
+        }
+
+        .sobre-pagina-galeria-coluna {
+            margin-bottom: 40px;
         }
 
         .sobre-pagina-galeria {
