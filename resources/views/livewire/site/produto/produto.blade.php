@@ -84,7 +84,7 @@
 
 
             <div class="col-lg-6">
-                <div class="bg-white rounded shadow-sm">
+                <div class="bg-white rounded shadow-sm" style="padding-left: 15px; padding-right: 15px">
                     <div style="padding-top: 15px; padding-left: 10px">
                         <h1 style="font-size: 15px" class="font-weight-bold">{{ $produto->nome }}</h1>
                     </div>
