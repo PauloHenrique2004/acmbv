@@ -139,13 +139,21 @@ class Produto extends Component
 
     public function updated($name)
     {
-        // Se o que mudou foi qualquer item dentro do buffer
-        if (strpos($name, 'buffer') !== false) {
+        if (strpos($name, 'buffer') === false) {
+            $this->validateOnly($name);
+        }
+    }
+
+    public function updatedBuffer()
+    {
+        try {
             $this->validate([
                 'buffer.*' => 'nullable|image|max:2048|mimes:jpeg,png',
             ]);
-        } else {
-            $this->validateOnly($name);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->buffer = [];
+
+            throw $e;
         }
     }
 

@@ -427,7 +427,7 @@
                     </div>
 
                     {{-- previews do buffer atual + botão para somar ao uploads --}}
-                    @if($buffer)
+                    @if(!empty($buffer) && count($buffer))
                         <div class="row mt-3">
                             @foreach($buffer as $file)
                                 <div class="col-md-3 mb-3">
