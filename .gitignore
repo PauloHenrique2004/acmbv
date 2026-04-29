@@ -1,8 +1,7 @@
+# --- Laravel Standard ---
 /node_modules
 /public/hot
 /public/storage
-/public/livewire-tmp
-/storage/*.key
 /vendor
 .env
 .env.backup
@@ -11,15 +10,19 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-
-/public/storage_*
-
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/$CACHE_FILE$
-
 .DS_Store
 
+# --- IDEs (VS Code, PHPStorm, etc) ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- Storage & Framework ---
+/storage/*.key
 /bootstrap/cache/*
 !/bootstrap/cache/.gitignore
 
@@ -38,6 +41,15 @@ yarn-error.log
 /storage/framework/views/*
 !/storage/framework/views/.gitignore
 
+# --- Uploads & Livewire (A parte que estava sujando seu Git) ---
+# Ignora todos os arquivos temporários do Livewire
+/storage/app/livewire-tmp/*
+!/storage/app/livewire-tmp/.gitignore
 
+# Ignora todos os uploads de produtos e arquivos de sistema
+/storage/app/*
+!/storage/app/.gitignore
+!/storage/app/public/
 
-
+# Ignora variações da pasta storage na raiz pública
+/public/storage_*

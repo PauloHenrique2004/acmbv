@@ -139,7 +139,14 @@ class Produto extends Component
 
     public function updated($name)
     {
-        $this->validateOnly($name);
+        // Se o que mudou foi qualquer item dentro do buffer
+        if (strpos($name, 'buffer') !== false) {
+            $this->validate([
+                'buffer.*' => 'nullable|image|max:2048|mimes:jpeg,png',
+            ]);
+        } else {
+            $this->validateOnly($name);
+        }
     }
 
     private function salvarFoto()

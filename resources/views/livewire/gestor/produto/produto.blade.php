@@ -413,12 +413,17 @@
                         <input type="file" class="form-control"
                                multiple
                                wire:model="buffer">
-                        <small class="form-text text-muted">
-                            Escolha uma ou mais imagens e depois clique em "Adicionar à galeria".
-                        </small>
-                        @error('buffer.*')
-                        <span class="text-danger small">{{ $message }}</span>
-                        @enderror
+                        <div class="mt-1">
+                            <small class="text-muted d-block">
+                                <i class="fas fa-info-circle"></i> Limite: 2MB por imagem (JPG/PNG).
+                            </small>
+
+                            @error('buffer.*')
+                                <small class="text-danger d-block mt-1">
+                                    <strong>Erro:</strong> Uma ou mais imagens selecionadas excedem 2MB ou não são válidas.
+                                </small>
+                            @enderror
+                        </div>
                     </div>
 
                     {{-- previews do buffer atual + botão para somar ao uploads --}}

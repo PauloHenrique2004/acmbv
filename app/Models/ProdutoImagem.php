@@ -15,6 +15,6 @@ class ProdutoImagem extends Model
 
     public function produto()
     {
-        return $this->belongsTo('App\Models\Imovel');
+        return $this->belongsTo('App\Models\Produto\Produto');
     }
 }
