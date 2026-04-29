@@ -40,7 +40,7 @@ class Integrantes extends Component
         $this->validate([
             'foto' => 'required|image|max:3072|mimes:jpg,jpeg,png,webp',
             'nome' => 'required|string|max:120',
-            'cargo' => 'required|string|max:120',
+            'cargo' => 'nullable|string|max:120',
         ]);
 
         $path = $this->foto->store('', SobreNosIntegrante::STORAGE);

@@ -31,7 +31,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <label for="integrante-cargo">Cargo</label>
+                        <label for="integrante-cargo">Cargo <small class="text-muted">(Opcional)</small></label>
                         <input id="integrante-cargo" type="text" class="form-control" wire:model.defer="cargo">
                     </div>
 
